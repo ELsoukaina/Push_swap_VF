@@ -1,27 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 17:40:56 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/08/24 18:52:42 by sel-jala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
-{
-	size_t	i;
-	size_t	j;
-
-	if (size == 0)
-		return (ft_strlen(src));
-	if (!dst && !size)
-		return (ft_strlen(src));
-	i = ft_strlen(dst);
-	if (size < i)
-		i = size;
-	j = 0;
-	while ((j + i) < (size - 1) && src[j])
-	{
-		dst[i + j] = src[j];
-		j++;
-	}
-	if (i + j < size)
-		dst[i + j] = '\0';
-	return (i + ft_strlen((char *)src));
-}
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -80,14 +69,14 @@ int	ft_atoi(const char *str)
 	long int	i[3];
 
 	i[0] = 0;
-	i[1] = 1;//res
-	i[2] = 0;//sign
+	i[1] = 1;
+	i[2] = 0;
 	while (str[i[0]] == ' ' || str[i[0]] == '\f' || str[i[0]] == '\t'
 		|| str[i[0]] == '\v' || str[i[0]] == '\n' || str[i[0]] == '\r')
 		i[0]++;
 	if (str[i[0]] == '-')
 		i[1] = -1;
-	if((str[i[0]] == '+' || str[i[0]] == '-') && str[i[0]+1] == '\0')
+	if ((str[i[0]] == '+' || str[i[0]] == '-') && str[i[0] + 1] == '\0')
 		print_error();
 	else if (str[i[0]] == '+' || str[i[0]] == '-')
 		i[0]++;
@@ -99,5 +88,5 @@ int	ft_atoi(const char *str)
 		i[0]++;
 	}
 	minmax(i[2], i[1]);
-	return (i[2]*i[1]);
+	return (i[2] * i[1]);
 }

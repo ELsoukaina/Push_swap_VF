@@ -1,24 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_str.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 17:40:53 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/08/24 18:53:34 by sel-jala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-
-// void	ft_putstr_fd(char *s, int fd)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	if (s)
-// 	{
-// 		while (s[i])
-// 		{
-// 			ft_putchar_fd(s[i], fd);
-// 			i++;
-// 		}
-// 	}
-// }
 
 int	ft_putstr_fd(char *s, int fd)
 {
@@ -44,3 +41,35 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (res);
 }
 
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	j;
+
+	if (size == 0)
+		return (ft_strlen(src));
+	if (!dst && !size)
+		return (ft_strlen(src));
+	i = ft_strlen(dst);
+	if (size < i)
+		i = size;
+	j = 0;
+	while ((j + i) < (size - 1) && src[j])
+	{
+		dst[i + j] = src[j];
+		j++;
+	}
+	if (i + j < size)
+		dst[i + j] = '\0';
+	return (i + ft_strlen((char *)src));
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (*str++)
+		i++;
+	return (i);
+}

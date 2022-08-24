@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 17:39:11 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/08/24 21:42:34 by sel-jala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-stack	*init_stack_b(stack *stack_a, stack *stack_b)
+t_stack	*init_stack_b(t_stack *stack_a, t_stack *stack_b)
 {
-	stack_b = malloc(sizeof(stack *));
+	stack_b = malloc(sizeof(t_stack *));
 	if (!stack_b)
 		handle_stack_error(stack_a, stack_b);
 	stack_b->values = malloc(sizeof(int *) * stack_a->res_size);
@@ -13,7 +25,7 @@ stack	*init_stack_b(stack *stack_a, stack *stack_b)
 	return (stack_b);
 }
 
-int	get_max(stack *stack)
+int	get_max(t_stack *stack)
 {
 	int	max;
 	int	i;
@@ -29,7 +41,7 @@ int	get_max(stack *stack)
 	return (max);
 }
 
-int	get_min(stack *stack)
+int	get_min(t_stack *stack)
 {
 	int	min;
 	int	i;

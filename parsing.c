@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 17:39:54 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/08/24 22:20:39 by sel-jala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	args_len(char **str)
@@ -10,7 +22,6 @@ int	args_len(char **str)
 	return (i);
 }
 
-//change the place of this function
 int	max_size(int s1, int s2)
 {
 	if (s1 > s2)
@@ -19,10 +30,9 @@ int	max_size(int s1, int s2)
 		return (s2);
 }
 
-stack	*fill_stack(stack	*stack_a, char	**str, int size)
+t_stack	*fill_stack(t_stack *stack_a, char	**str, int size)
 {
-	handle_double_error(str, size);
-	stack_a = malloc(sizeof(stack));
+	stack_a = malloc(sizeof(t_stack));
 	stack_a->values = malloc(sizeof(int) * size);
 	stack_a->res_size = size;
 	if (!stack_a->values)
@@ -30,15 +40,16 @@ stack	*fill_stack(stack	*stack_a, char	**str, int size)
 	while (size > 0)
 	{
 		stack_a->values[stack_a->size] = ft_atoi(str[size - 1]);
-		free(str[size-1]);
+		free(str[size - 1]);
 		size--;
 		stack_a->size++;
 	}
 	free(str);
+	handle_double_error(stack_a);
 	return (stack_a);
 }
 
-stack	*parsing(stack	*stack_a, char	**argv, int argc)
+t_stack	*parsing(t_stack *stack_a, char	**argv, int argc)
 {
 	char	*tmp[2];
 	char	**split;
@@ -47,15 +58,14 @@ stack	*parsing(stack	*stack_a, char	**argv, int argc)
 
 	i = 1;
 	tmp[0] = ft_strdup(argv[i]);
-	//printf("tmp[0] 3amar b : %s",tmp[0]);
 	while (++i < argc)
 	{
 		tmp[1] = ft_strjoin(tmp[0], " ");
 		free(tmp[0]);
 		tmp[0] = ft_strjoin(tmp[1], argv[i]);
 		free(tmp[1]);
-        if(argv[i][0] == '\0')
-            print_error();
+		if (argv[i][0] == '\0')
+			print_error();
 	}
 	split = ft_split(tmp[0], ' ');
 	size = args_len(split);

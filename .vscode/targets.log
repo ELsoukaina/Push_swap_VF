@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Aug 24 03:52:26 2022
+# Make data base, printed on Wed Aug 24 13:38:42 2022
 
 # Variables
 
@@ -39,7 +39,7 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cfmr0033n6/T/vscode-ipc-d81a4033-8b10-4d27-a7a9-bf0d71b47599.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cfmr0033n6/T/vscode-ipc-fe3e577b-168a-4181-b013-84af2b90575e.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -53,7 +53,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.3Ycd4ZtMZb/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.eEb09tDcpB/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -123,7 +123,7 @@ MFLAGS = -Rrqp
 # makefile (from `Makefile', line 2)
 MAIN = push_swap.c
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2152
+XPC_SERVICE_NAME = com.microsoft.VSCode.2216
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -149,9 +149,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 9950
+VSCODE_PID = 1694
 # variable set hash-table stats:
-# Load=69/1024=7%, Rehash=0, Collisions=5/99=5%
+# Load=69/1024=7%, Rehash=0, Collisions=7/103=7%
 
 # Pattern-specific Variable Values
 
@@ -159,9 +159,9 @@ VSCODE_PID = 9950
 
 # Directories
 
-# . (device 16777225, inode 1385937): 39 files, no impossibilities.
+# . (device 16777225, inode 1385937): 24 files, no impossibilities.
 
-# 39 files, no impossibilities in 1 directories.
+# 24 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -175,37 +175,16 @@ VSCODE_PID = 9950
 # Files
 
 # Not a target:
-stack_a_operations.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-22 18:07:54
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+simple_sort.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-simple_sort.o: simple_sort.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `simple_sort'
-#  Last modified 2022-08-24 02:17:31
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
-
-stack_ab_operations.o: stack_ab_operations.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `stack_ab_operations'
-#  Last modified 2022-08-24 00:56:57
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
+# Not a target:
+stack_ab_operations.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 push_swap.c:
@@ -216,32 +195,14 @@ push_swap.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Not a target:
-push.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 02:55:58
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
 all: push_swap
 #  Command-line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-utils_str.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-22 15:28:59
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
 # Not a target:
 utils.c:
@@ -252,47 +213,17 @@ utils.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-push.o: push.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `push'
-#  Last modified 2022-08-24 02:57:39
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
-
-compl_sort.o: compl_sort.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `compl_sort'
-#  Last modified 2022-08-24 02:55:16
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
+# Not a target:
+push.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-parsing.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-22 18:20:45
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-stack_b_operations.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-22 17:56:17
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+compl_sort.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 push_swap.h:
@@ -304,32 +235,16 @@ push_swap.h:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-handling_errors.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-22 18:12:51
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-init_stack.o: init_stack.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `init_stack'
-#  Last modified 2022-08-24 00:56:57
-#  File has been updated.
- 
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
+# Not a target:
+init_stack.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
@@ -341,43 +256,10 @@ Makefile:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-utils_a.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-22 18:13:55
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-sort.o: sort.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `sort'
-#  Last modified 2022-08-24 02:17:31
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
-
-# Not a target:
-simple_sort.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 01:43:10
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-stack_ab_operations.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-22 17:55:36
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+sort.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 fclean: clean
 #  Implicit rule search has not been done.
@@ -388,40 +270,16 @@ fclean: clean
 	
 
 # Not a target:
-compl_sort.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 02:55:08
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-manage_groups.o: manage_groups.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `manage_groups'
-#  Last modified 2022-08-24 02:57:39
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
-
 # Not a target:
-init_stack.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-22 17:05:13
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+manage_groups.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re: fclean all
 #  Implicit rule search has not been done.
@@ -429,25 +287,10 @@ re: fclean all
 #  File has not been updated.
 
 # Not a target:
-sort.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 01:43:39
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-stack_a_operations.o: stack_a_operations.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `stack_a_operations'
-#  Last modified 2022-08-24 00:56:57
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
+stack_a_operations.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 clean:
 #  Implicit rule search has not been done.
@@ -459,109 +302,87 @@ clean:
 
 push_swap: push_swap.c push_swap.h push_swap.a
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-24 02:57:39
+#  Last modified 2022-08-24 05:50:16
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 #  commands to execute (from `Makefile', line 14):
 	gcc  $(MAIN) -I $(INCLUDE) $(NAME) -o push_swap
 	
 
-utils_str.o: utils_str.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `utils_str'
-#  Last modified 2022-08-24 00:56:57
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
+# Not a target:
+utils_str.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 utils.o: utils.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils'
-#  Last modified 2022-08-24 00:56:57
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := utils.o
+# automatic
+# % := 
+# automatic
+# * := utils
+# automatic
+# + := utils.c
+# automatic
+# | := 
+# automatic
+# < := utils.c
+# automatic
+# ^ := utils.c
+# automatic
+# ? := utils.c
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
 #  commands to execute (from `Makefile', line 27):
+ 
 	gcc $(FLG) -c $< -I $(INCLUDE)
 	
 
 push_swap.a: utils.o utils_str.o utils_a.o stack_a_operations.o stack_b_operations.o stack_ab_operations.o sort.o simple_sort.o parsing.o init_stack.o handling_errors.o compl_sort.o manage_groups.o push.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-24 02:57:39
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 #  commands to execute (from `Makefile', line 16):
 	ar rcs $(NAME) $(OBJ)
 	
 
-parsing.o: parsing.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `parsing'
-#  Last modified 2022-08-24 00:56:57
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
-
-stack_b_operations.o: stack_b_operations.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `stack_b_operations'
-#  Last modified 2022-08-24 00:56:57
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
-
-handling_errors.o: handling_errors.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `handling_errors'
-#  Last modified 2022-08-24 00:56:57
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
+# Not a target:
+parsing.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-manage_groups.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 02:57:27
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+stack_b_operations.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-utils_a.o: utils_a.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `utils_a'
-#  Last modified 2022-08-24 00:56:57
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 27):
-	gcc $(FLG) -c $< -I $(INCLUDE)
-	
+# Not a target:
+handling_errors.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+utils_a.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=39/1024=4%, Rehash=0, Collisions=8/115=7%
+# Load=26/1024=3%, Rehash=0, Collisions=2/63=3%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -573,6 +394,6 @@ utils_a.o: utils_a.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Aug 24 03:52:26 2022
+# Finished Make data base on Wed Aug 24 13:38:42 2022
 
  

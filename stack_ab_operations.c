@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_ab_operations.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 17:40:43 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/08/24 18:21:50 by sel-jala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int	rr(stack *stack_a, stack *stack_b)
+int	rr(t_stack *stack_a, t_stack *stack_b)
 {
 	return (ra(stack_a) * rb(stack_b));
 }
 
-int	ss(stack *stack_a, stack *stack_b)
+int	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	return (sa(stack_a) * sb(stack_b));
 }
 
-int	rrr(stack *stack_a, stack *stack_b)
+int	rrr(t_stack *stack_a, t_stack *stack_b)
 {
 	return (rra(stack_a) * rrb(stack_b));
 }
 
-int	shift_bottom(stack *stack)
+int	shift_bottom(t_stack *stack)
 {
 	int	bottom;
 	int	i;
@@ -33,7 +45,7 @@ int	shift_bottom(stack *stack)
 	return (1);
 }
 
-int	shift_top(stack *stack)
+int	shift_top(t_stack *stack)
 {
 	int	top;
 	int	i;

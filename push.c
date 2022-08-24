@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 17:40:23 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/08/24 22:28:35 by sel-jala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int	calc_first(int index, int size, int isa)//j'ai ajoute une condition
+int	calc_first(int index, int size, int isa)
 {
-	if (index > (size-1) / 2)
+	if (index > (size - 1) / 2)
 		return (size - index);
-	else if(index + isa < size)
+	else if (index + isa < size)
 		return (index + isa);
-	return (index+1);
+	return (index + 1);
 }
 
-int	get_member_to_push(stack *stack, int *group)
+int	get_member_to_push(t_stack *stack, int *group)
 {	
 	int	index;
 	int	first;
@@ -22,16 +34,11 @@ int	get_member_to_push(stack *stack, int *group)
 		i--;
 	index = i;
 	first = calc_first(index, stack->size, 2);
-	// printf("stack_a size = %d\n",stack->size+1);
-	// printf("%d\n",stack->values[stack->size]);
-	while (--i >= 0)// more than group
+	while (--i >= 0)
 	{
 		if (stack->values[i] >= group[0] && stack->values[i] <= group[1])
 		{
-			// printf("value is : %d\n", stack->values[i]);
-			// printf("first is : %d\n", stack->values[first]);
 			second = calc_first(i, stack->size, 2);
-			//printf("second is : %d\n",stack->values[second]);
 			if (first > second || (first == second
 					&& stack->values[index] > stack->values[i]))
 			{
@@ -43,31 +50,34 @@ int	get_member_to_push(stack *stack, int *group)
 	return (index);
 }
 
-int	get_first(stack *b, stack *a, int limits[2], int member)
+int	get_first(t_stack *stack_a, t_stack *stack_b, int limits[2], int member)
 {
 	int	first;
 	int	first_a;
 	int	place;
 
-	first = calc_first(member, b->size, 2);
-	place = a->size - 1;
-	while (b->values[member] > limits[0] && b->values[member] < limits[1]
-		&& place > 0 && (b->values[member] < a->values[place]
-			|| b->values[member] > a->values[place - 1]))
+	first = calc_first(member, stack_b->size, 2);
+	place = stack_a->size - 1;
+	while (stack_b->values[member] > limits[0]
+		&& stack_b->values[member] < limits[1]
+		&& place > 0 && (stack_b->values[member] < stack_a->values[place]
+			|| stack_b->values[member] > stack_a->values[place - 1]))
 		place--;
-	while ((b->values[member] < limits[0] || b->values[member] > limits[1])
-		&& place >= 0 && a->values[place] != limits[1])
+	while ((stack_b->values[member] < limits[0]
+			|| stack_b->values[member] > limits[1])
+		&& place >= 0 && stack_a->values[place] != limits[1])
 		place--;
-	first_a = calc_first(place, a->size, 0);
-	if ((member > (b->size - 1) / 2 && place > (a->size - 1) / 2)
-		|| (member <= (b->size - 1) / 2 && place <= (a->size - 1) / 2))
+	first_a = calc_first(place, stack_a->size, 0);
+	if ((member > (stack_b->size - 1) / 2 && place > (stack_a->size - 1) / 2)
+		|| (member <= (stack_b->size - 1) / 2
+			&& place <= (stack_a->size - 1) / 2))
 		first = max_size(first, first_a);
 	else
 		first += first_a;
 	return (first);
 }
 
-int	get_member_to_push_and_sort(stack	*stack_a, stack *stack_b, int *group)
+int	get_member_push_sort(t_stack	*stack_a, t_stack *stack_b, int *group)
 {
 	int	index;
 	int	first[2];
@@ -81,10 +91,10 @@ int	get_member_to_push_and_sort(stack	*stack_a, stack *stack_b, int *group)
 			|| stack_b->values[i] > group[1]))
 		i--;
 	index = i;
-	first[0] = get_first(stack_b, stack_a, limits, index);
+	first[0] = get_first(stack_a, stack_b, limits, index);
 	while (--i >= 0)
 	{
-		first[1] = get_first(stack_b, stack_a, limits, i);
+		first[1] = get_first(stack_a, stack_b, limits, i);
 		if (stack_b->values[i] >= group[0] && stack_b->values[i] <= group[1]
 			&& (first[0] > first[1] || (first[0] == first[1]
 					&& stack_b->values[index] < stack_b->values[i])))
@@ -96,7 +106,7 @@ int	get_member_to_push_and_sort(stack	*stack_a, stack *stack_b, int *group)
 	return (index);
 }
 
-void	push_to_a(stack *stack_a, stack *stack_b)
+void	push_to_a(t_stack *stack_a, t_stack *stack_b)
 {
 	int	min;
 

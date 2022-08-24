@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   manage_groups.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 17:39:45 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/08/24 18:35:35 by sel-jala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	fill_groupes(int **groupes, int amount, int min, int max)
@@ -24,7 +36,7 @@ void	fill_groupes(int **groupes, int amount, int min, int max)
 	}
 }
 
-int	**get_created_groupes(stack *stack_a, stack *stack_b, int amount)
+int	**get_created_groupes(t_stack *stack_a, t_stack *stack_b, int amount)
 {
 	int	i;
 	int	min;
@@ -51,15 +63,14 @@ int	**get_created_groupes(stack *stack_a, stack *stack_b, int amount)
 	return (groupes);
 }
 
-void	push_groupes(stack *stack_a, stack *stack_b, int *groupe)
+void	push_groupes(t_stack *stack_a, t_stack *stack_b, int *groupe)
 {
 	int	value;
 	int	index;
-	// && is_ingroup(stack_a, groupe)
+
 	while (stack_a->size > 2 && is_ingroup(stack_a, groupe))
 	{
 		index = get_member_to_push(stack_a, groupe);
-		//printf("member to push : %d,\t %d\n", index, stack_a->values[index]);
 		value = stack_a->values[index];
 		while (index > (stack_a->size - 1) / 2
 			&& stack_a->values[stack_a->size - 1] != value)
@@ -71,7 +82,7 @@ void	push_groupes(stack *stack_a, stack *stack_b, int *groupe)
 	}
 }
 
-int	is_ingroup(stack	*stack, int	*group)
+int	is_ingroup(t_stack	*stack, int	*group)
 {
 	int	i;
 
@@ -82,25 +93,15 @@ int	is_ingroup(stack	*stack, int	*group)
 		{
 			return (1);
 		}
-		//printf("is_in_group\t");
 		i--;
 	}
 	return (0);
 }
 
-void	delete(stack *stack_b, int **groups, int i)
-{
-	free(stack_b->values);
-	free(stack_b);
-	free(groups[i]);
-	free(groups);
-}
-
-void	move_index(stack *stack_b, int index, int value)
+void	move_index(t_stack *stack_b, int index, int value)
 {
 	while ((stack_b->size - 1) / 2 < index && value != stack_b->values[0])
 	{
-		// (void)(rb(stack_b) && printf("rb the value of : %d\n", stack_b->values[index]));
 		(void)(rb(stack_b) && ft_putstr_fd("rb\n", 1));
 	}
 	while ((stack_b->size - 1) / 2 >= index && value != stack_b->values[0])

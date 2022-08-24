@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_a_operations.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 17:40:40 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/08/24 21:55:10 by sel-jala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int	pa(stack *stack_a, stack *stack_b)
+int	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_b == NULL)
 		handle_stack_error(stack_a, stack_b);
@@ -12,7 +24,7 @@ int	pa(stack *stack_a, stack *stack_b)
 	return (1);
 }
 
-int	sa(stack *stack_a)
+int	sa(t_stack *stack_a)
 {
 	int	tmp;
 
@@ -24,13 +36,12 @@ int	sa(stack *stack_a)
 	return (1);
 }
 
-int	ra(stack *stack_a)
+int	ra(t_stack *stack_a)
 {
 	return (shift_top(stack_a));
 }
 
-int	rra(stack *stack_a)
+int	rra(t_stack *stack_a)
 {
 	return (shift_bottom(stack_a));
 }
-

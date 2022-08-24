@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/08/24 17:39:38 by sel-jala          #+#    #+#              #
+#    Updated: 2022/08/24 20:29:26 by sel-jala         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME= push_swap.a
 MAIN= push_swap.c
 SRCS= utils.c utils_str.c utils_a.c stack_a_operations.c stack_b_operations.c \
@@ -6,7 +18,7 @@ SRCS= utils.c utils_str.c utils_a.c stack_a_operations.c stack_b_operations.c \
 OBJ= $(SRCS:.c=.o)
 INCLUDE= push_swap.h
 
-# FLG= -Wall -Wextra -Werror
+FLG= -Wall -Wextra -Werror
 
 all: push_swap
 
@@ -26,4 +38,4 @@ fclean: clean
 %.o: %.c
 	gcc $(FLG) -c $< -I $(INCLUDE)
 
-re: fclean all	
+re: fclean a

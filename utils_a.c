@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_a.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 17:40:49 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/08/24 18:53:21 by sel-jala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	*ft_memcpy(void *str1, const void *str2, size_t n)
@@ -95,14 +107,4 @@ char	**ft_split(char const *s, char c)
 	}
 	split[i[1]] = 0;
 	return (split);
-}
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (*str++)
-		i++;
-	return (i);
 }

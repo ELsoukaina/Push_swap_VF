@@ -1,7 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/sel-jala/Desktop/push_swap_fv'
 gcc  -c utils.c -I push_swap.h
- 
 gcc  -c utils_str.c -I push_swap.h
 gcc  -c utils_a.c -I push_swap.h
 gcc  -c stack_a_operations.c -I push_swap.h
@@ -12,6 +11,7 @@ gcc  -c simple_sort.c -I push_swap.h
 gcc  -c parsing.c -I push_swap.h
 gcc  -c init_stack.c -I push_swap.h
 gcc  -c handling_errors.c -I push_swap.h
+ 
 gcc  -c compl_sort.c -I push_swap.h
 gcc  -c manage_groups.c -I push_swap.h
 gcc  -c push.c -I push_swap.h

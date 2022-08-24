@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/24 17:40:37 by sel-jala          #+#    #+#             */
+/*   Updated: 2022/08/24 21:43:41 by sel-jala         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	sort_b(stack *stack_b)
+void	sort_b(t_stack *stack_b)
 {
 	int	index;
 	int	max;
@@ -20,7 +32,7 @@ void	sort_b(stack *stack_b)
 	}
 }
 
-void	sort_a(stack *stack_a)
+void	sort_a(t_stack *stack_a)
 {
 	int	index;
 	int	min;
@@ -40,7 +52,7 @@ void	sort_a(stack *stack_a)
 	}
 }
 
-int	b_is_sorted(stack *stack_a, stack *stack_b)
+int	b_is_sorted(t_stack *stack_a, t_stack *stack_b)
 {
 	int	tmp;
 	int	i;
@@ -67,7 +79,7 @@ int	b_is_sorted(stack *stack_a, stack *stack_b)
 	return (1);
 }
 
-int	is_sorted(stack *stack_a, stack *stack_b)
+int	is_sorted(t_stack *stack_a, t_stack *stack_b)
 {
 	int	tmp;
 	int	i;
@@ -86,7 +98,7 @@ int	is_sorted(stack *stack_a, stack *stack_b)
 	return (b_is_sorted(stack_a, stack_b));
 }
 
-void	push_rotate_to_top_b(stack *stack_a, stack *stack_b)
+void	push_rotate_to_top_b(t_stack *stack_a, t_stack *stack_b)
 {
 	int	index;
 	int	min;
