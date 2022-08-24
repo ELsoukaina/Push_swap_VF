@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 		// 	printf("a the value is : %d\n", stack_a->values[i]);
 		// 	i++;
 		// }
-		if (stack_a->size < 20)
+		if (stack_a->size < 15)
 			simple_sort(stack_a, stack_b);
 		else
 			compl_sort(stack_a, stack_b);

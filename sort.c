@@ -57,7 +57,7 @@ int	b_is_sorted(stack *stack_a, stack *stack_b)
 		{
 			if (tmp < stack_b->values[i] && min != tmp)
 				return (0);
-			tmp = stack_a->values[i];
+			tmp = stack_b->values[i];
 		}
 		if (stack_a->size > 0 && max > stack_a->values[stack_a->size - 1])
 		{

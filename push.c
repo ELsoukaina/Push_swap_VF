@@ -1,10 +1,12 @@
 #include "push_swap.h"
 
-int	calc_first(int index, int size, int isa)
+int	calc_first(int index, int size, int isa)//j'ai ajoute une condition
 {
-	if (index > ((size - 1) / 2))
+	if (index > (size-1) / 2)
 		return (size - index);
-	return (index + isa);
+	else if(index + isa < size)
+		return (index + isa);
+	return (index+1);
 }
 
 int	get_member_to_push(stack *stack, int *group)
@@ -20,11 +22,16 @@ int	get_member_to_push(stack *stack, int *group)
 		i--;
 	index = i;
 	first = calc_first(index, stack->size, 2);
-	while (--i >= 0)
+	// printf("stack_a size = %d\n",stack->size+1);
+	// printf("%d\n",stack->values[stack->size]);
+	while (--i >= 0)// more than group
 	{
 		if (stack->values[i] >= group[0] && stack->values[i] <= group[1])
 		{
+			// printf("value is : %d\n", stack->values[i]);
+			// printf("first is : %d\n", stack->values[first]);
 			second = calc_first(i, stack->size, 2);
+			//printf("second is : %d\n",stack->values[second]);
 			if (first > second || (first == second
 					&& stack->values[index] > stack->values[i]))
 			{

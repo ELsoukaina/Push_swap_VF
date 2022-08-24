@@ -57,12 +57,13 @@ void	compl_sort(stack *stack_a, stack *stack_b)
 	else
 		amount = 3;
 	groups = get_created_groupes(stack_a, stack_b, amount);
-	// i = 0;
-	// while(++i<=groups[0][0])
-	// 	printf("groups : %d\t",groups[i][1]);
 	i=0;
 	while (++i <= groups[0][0])
 		push_groupes(stack_a, stack_b, groups[i]);
+	i=0;
+	// while(++i < stack_b->size)
+	// 	printf("%d \t",stack_b->values[i]);
+	//exit(0);
 	i = groups[0][0];
 	while (i > 0)
 	{

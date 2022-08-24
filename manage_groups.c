@@ -55,10 +55,11 @@ void	push_groupes(stack *stack_a, stack *stack_b, int *groupe)
 {
 	int	value;
 	int	index;
-
+	// && is_ingroup(stack_a, groupe)
 	while (stack_a->size > 2 && is_ingroup(stack_a, groupe))
 	{
 		index = get_member_to_push(stack_a, groupe);
+		//printf("member to push : %d,\t %d\n", index, stack_a->values[index]);
 		value = stack_a->values[index];
 		while (index > (stack_a->size - 1) / 2
 			&& stack_a->values[stack_a->size - 1] != value)
@@ -78,7 +79,10 @@ int	is_ingroup(stack	*stack, int	*group)
 	while (i >= 0)
 	{
 		if (stack->values[i] >= group[0] && stack->values[i] <= group[1])
+		{
 			return (1);
+		}
+		//printf("is_in_group\t");
 		i--;
 	}
 	return (0);

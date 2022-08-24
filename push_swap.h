@@ -36,6 +36,7 @@ int	    is_sorted(stack *stack_a, stack *stack_b);
 void	push_rotate_to_top_b(stack *stack_a, stack *stack_b);
 // *********** SIMPLE SORT ***********
 void	push_all_to_A(stack *stack_a, stack *stack_b);
+void	push_min_to_b(stack *stack_a, stack *stack_b);
 void	simple_sort(stack *stack_a, stack *stack_b);
 // *********** INISIALISER ***********
 stack	*init_stack_b(stack *stack_a, stack *stack_b);
