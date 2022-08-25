@@ -6,7 +6,7 @@
 /*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:40:46 by sel-jala          #+#    #+#             */
-/*   Updated: 2022/08/24 18:49:24 by sel-jala         ###   ########.fr       */
+/*   Updated: 2022/08/24 23:38:26 by sel-jala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	sb(t_stack *stack_b)
 
 int	rb(t_stack *stack_b)
 {
-	return (shift_top(stack_b));
+	return (shift_up(stack_b));
 }
 
 int	rrb(t_stack *stack_b)
 {
-	return (shift_bottom(stack_b));
+	return (shift_down(stack_b));
 }
 
 int	pb(t_stack *stack_a, t_stack *stack_b)

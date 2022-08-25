@@ -6,7 +6,7 @@
 /*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:40:56 by sel-jala          #+#    #+#             */
-/*   Updated: 2022/08/24 18:52:42 by sel-jala         ###   ########.fr       */
+/*   Updated: 2022/08/24 23:36:06 by sel-jala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	dst[i] = '\0';
 	return (lensrc + i);
-}
-
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
-{
-	unsigned char	*s1;
-	unsigned char	*s2;
-
-	s1 = (unsigned char *)str1;
-	s2 = (unsigned char *)str2;
-	if (n == 0)
-		return (0);
-	while (--n > 0 && (*s1 || *s2))
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
 }
 
 int	ft_isdigit(int d)

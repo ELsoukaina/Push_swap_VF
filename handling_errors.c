@@ -6,7 +6,7 @@
 /*   By: sel-jala <sel-jala@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:39:06 by sel-jala          #+#    #+#             */
-/*   Updated: 2022/08/24 22:21:18 by sel-jala         ###   ########.fr       */
+/*   Updated: 2022/08/25 01:00:56 by sel-jala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_error(void)
 {
-	ft_putstr_fd("Error !", 1);
+	ft_putstr_fd("Error\n", 1);
 	exit(1);
 }
 
@@ -40,13 +40,13 @@ void	handle_double_error(t_stack	*stack_a)
 
 void	handle_stack_error(t_stack *stack_a, t_stack *stack_b)
 {
-	ft_putstr_fd("Error !", 1);
-	free(stack_a);
+	ft_putstr_fd("Error\n", 1);
 	free(stack_a->values);
+	free(stack_a);
 	if (!stack_b)
 	{
-		free(stack_b);
 		free(stack_b->values);
+		free(stack_b);
 	}
 	exit(1);
 }
